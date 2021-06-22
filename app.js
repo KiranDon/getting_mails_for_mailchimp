@@ -8,8 +8,8 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 
-app.listen(1111, function(){
-    console.log("Server started at port 1111");
+app.listen(8080, function(){
+    console.log("Server started at port 8080");
 })
 
 app.get('/', (req, res)=>{
@@ -46,7 +46,7 @@ app.post('/', function(req, res){
         response.on('data', function(data){
             // console.log(JSON.parse(data));
         })
-        // console.log(response.statusCode)
+        console.log(response.statusCode)
         if(response.statusCode===200){
             res.sendFile(__dirname + '/success.html');
         }
